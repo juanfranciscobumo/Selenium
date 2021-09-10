@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+}
+
+test {
+    maxParallelForks = Runtime.runtime.availableProcessors()
+    ignoreFailures = true
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
