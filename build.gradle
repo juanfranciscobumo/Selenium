@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.18.1'
 }
 
 test {
@@ -18,4 +18,7 @@ test {
     ignoreFailures = true
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
+}
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation"
 }
